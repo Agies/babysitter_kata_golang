@@ -1,5 +1,5 @@
 package calculator
 
-func Calculate() float64 {
+func Calculate() int {
 	return 0
 }
