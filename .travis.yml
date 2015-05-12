@@ -4,3 +4,4 @@ go:
     - tip
 install:
   - go get github.com/stretchr/testify
+  - go get github.com/Agies/babysitter_kata_golang/calculator
