@@ -1,7 +1,7 @@
-package main
+package calculator
 
 import "fmt"
 
-func main() {
+func Calculate() {
 	fmt.Printf("Hello, world.\n")
 }
