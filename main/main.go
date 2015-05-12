@@ -1,8 +1,9 @@
 package main
 
 import "fmt"
-import "babysitter_kata_golang/calculator"
+import "github.com/agies/babysitter_kata_golang/calculator"
 
 func main() {
-	fmt.Println(calculator.Calculate())
+	result := calculator.Calculate()
+	fmt.Println(result)
 }

@@ -1,7 +1,5 @@
 package calculator
 
-import "fmt"
-
-func Calculate() {
-	fmt.Printf("Hello, world.\n")
+func Calculate() float64 {
+	return 0
 }
