@@ -6,6 +6,13 @@ import (
 )
 
 func TestCalculate(t *testing.T) {
-	result := Calculate()
-	assert.NotNil(t, result)
+	result, error := Calculate("05/11/2015 17:00")
+	assert.Equal(t, result, 0);
+	assert.Nil(t, error);
+}
+
+func TestShouldRequireAStartTime(t *testing.T) {
+	result, error := Calculate("");
+	assert.Equal(t, result, 0);
+	assert.NotNil(t, error);
 }
