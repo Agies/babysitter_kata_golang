@@ -18,6 +18,10 @@ func Calculate(startTime string, leaveTime string, bedTime string) (int, error) 
 	if (leaveTime == "") {
 		return 0, errors.New("Leave time is required");
 	}
+	_, error = time.Parse(dateFormat, leaveTime);
+	if (error != nil) {
+		return 0, error;
+	}
 	if (bedTime == "") {
 		return 0, errors.New("Bed time is required");
 	}

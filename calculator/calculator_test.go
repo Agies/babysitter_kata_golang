@@ -29,6 +29,12 @@ func TestShouldRequireALeaveTime(t *testing.T) {
 	assert.NotNil(t, error);
 }
 
+func TestShouldRequireALeaveTimeToBeParsable(t *testing.T) {
+	result, error := Calculate("05/11/2015 05:00pm", "blah", "05/11/2015 05:00pm");
+	assert.Equal(t, result, 0);
+	assert.NotNil(t, error);
+}
+
 func TestShouldRequireABedTime(t *testing.T) {
 	result, error := Calculate("05/11/2015 05:00pm", "05/11/2015 05:00pm", "");
 	assert.Equal(t, result, 0);
