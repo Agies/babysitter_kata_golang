@@ -34,3 +34,13 @@ func TestShouldRequireABedTime(t *testing.T) {
 	_, error := Calculate("05/11/2015 05:00pm", "05/11/2015 05:00pm", "");
 	assert.NotNil(t, error);
 }
+
+func TestShouldRequireABedTimeToBeParsable(t *testing.T) {
+	_, error := Calculate("05/11/2015 05:00pm", "05/11/2015 05:00pm", "blah");
+	assert.NotNil(t, error);
+}
+
+func TestShouldRequireAStartTimeOfNoEarlierThan5PM(t *testing.T) {
+	_, error := Calculate("05/11/2015 04:00pm", "05/11/2015 05:00pm", "05/11/2015 05:00pm");
+	assert.NotNil(t, error);
+}
