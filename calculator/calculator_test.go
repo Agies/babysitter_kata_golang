@@ -6,19 +6,25 @@ import (
 )
 
 func TestCalculate(t *testing.T) {
-	result, error := Calculate("05/11/2015 17:00", "05/11/2015 17:00")
+	result, error := Calculate("05/11/2015 17:00", "05/11/2015 17:00", "05/11/2015 17:00")
 	assert.Equal(t, result, 0);
 	assert.Nil(t, error);
 }
 
 func TestShouldRequireAStartTime(t *testing.T) {
-	result, error := Calculate("", "05/11/2015 17:00");
+	result, error := Calculate("", "05/11/2015 17:00", "05/11/2015 17:00");
 	assert.Equal(t, result, 0);
 	assert.NotNil(t, error);
 }
 
 func TestShouldRequireALeaveTime(t *testing.T) {
-	result, error := Calculate("05/11/2015 17:00", "");
+	result, error := Calculate("05/11/2015 17:00", "", "05/11/2015 17:00");
+	assert.Equal(t, result, 0);
+	assert.NotNil(t, error);
+}
+
+func TestShouldRequireABedTime(t *testing.T) {
+	result, error := Calculate("05/11/2015 17:00", "05/11/2015 17:00", "");
 	assert.Equal(t, result, 0);
 	assert.NotNil(t, error);
 }
